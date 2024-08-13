@@ -1,18 +1,28 @@
+/* Basic Reset and Typography */
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
     color: #333;
     background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
 }
 
+/* Container for content alignment */
 .container {
     max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: auto;
+    padding: 20px;
 }
 
+/* Header styles */
 header {
     background: #0077cc;
     color: #ffffff;
@@ -20,57 +30,86 @@ header {
     text-align: center;
 }
 
-header nav ul {
-    list-style: none;
+header h1 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Navigation styles */
+nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
 }
 
-header nav ul li {
+nav ul li {
     margin: 0 15px;
 }
 
-header nav ul li a {
+nav ul li a {
     color: #ffffff;
-    text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
 }
 
-header nav ul li a:hover {
+nav ul li a:hover {
     color: #ffdd57;
 }
 
+/* Main content styles */
 main {
     padding: 50px 0;
     background: #fff;
 }
 
-section#projects {
+section {
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-section#projects h2 {
-    color: #333;
     margin-bottom: 20px;
 }
 
-#repo-list div {
+section h2 {
+    color: #0077cc;
+    margin-bottom: 20px;
+}
+
+section p, section ul {
+    color: #666;
     margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
 }
 
-#repo-list div:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+/* Project listing specific styles */
+article {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
+article h3 {
+    color: #0077cc;
+}
+
+article p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+article a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0077cc;
+    font-weight: bold;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles */
 footer {
     background: #0077cc;
     color: #ffffff;
@@ -82,4 +121,13 @@ footer {
 footer p {
     margin: 0;
     font-size: 14px;
+}
+
+footer a {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
