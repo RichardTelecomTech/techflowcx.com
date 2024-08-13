@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="container">
-            <h1>Richard's Portfolio</h1>
+            <h1>Richard's Telephony Engineering Portfolio</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -22,31 +22,13 @@
     <main class="container">
         <section id="project-list">
             <h2>Featured Projects</h2>
-            <article>
-                <h3>Genesys Cloud Solutions</h3>
-                <p>Detailed implementations of Genesys Cloud setups for various clients, focusing on integration and customization.</p>
-                <a href="https://github.com/TelcoVantage/GenesysProject" target="_blank">View on GitHub</a>
-            </article>
-            <article>
-                <h3>Custom Reporting Tools</h3>
-                <p>Tools that extract and visualize data from Genesys Cloud, aiding in performance metrics analysis.</p>
-                <a href="https://github.com/TelcoVantage/ReportingTool" target="_blank">View on GitHub</a>
-            </article>
-            <article>
-                <h3>Automation Scripts</h3>
-                <p>Scripts that automate routine tasks within Genesys Cloud, such as user role management and queue adjustments.</p>
-                <a href="https://github.com/TelcoVantage/AutomationScripts" target="_blank">View on GitHub</a>
-            </article>
-            <article>
-                <h3>Integration Solutions</h3>
-                <p>Integration of Genesys Cloud with Salesforce CRM to enhance data flow and functionality across platforms.</p>
-                <a href="https://github.com/TelcoVantage/IntegrationSolution" target="_blank">View on GitHub</a>
-            </article>
-            <article>
-                <h3>Post Call Surveys</h3>
-                <p>Setup of post-call surveys via SMS, integrating responses back into Genesys data tables for analysis.</p>
-                <a href="https://github.com/TelcoVantage/PostCallSurveys" target="_blank">View on GitHub</a>
-            </article>
+            <div id="projects-container">
+                <!-- Projects will be loaded here -->
+            </div>
+            <div class="pagination">
+                <button onclick="previousPage()">Previous</button>
+                <button onclick="nextPage()">Next</button>
+            </div>
         </section>
     </main>
     <footer>
@@ -55,6 +37,6 @@
             <p>GitHub: <a href="https://github.com/TelcoVantage" target="_blank">TelcoVantage</a></p>
         </div>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="js/projects.js"></script>
 </body>
 </html>
