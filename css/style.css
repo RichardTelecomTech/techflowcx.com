@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -7,21 +7,69 @@ body {
     background-color: #f4f4f4;
 }
 
-header, footer {
-    background: #333;
+header {
+    background: #444;
     color: #fff;
     padding: 1em 2em;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header h1, header p {
+header h1 {
     margin: 0;
 }
 
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+section#projects {
+    width: 80%;
+    max-width: 960px;
+    margin: auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
 section#projects h2 {
-    background-color: #555;
-    color: white;
-    padding: 10px 20px;
+    color: #333;
+}
+
+#repo-list div {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+#repo-list div:last-child {
+    border-bottom: none;
+}
+
+footer {
+    background: #444;
+    color: #fff;
+    text-align: center;
+    padding: 1em 2em;
 }
 
 footer p {
