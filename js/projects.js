@@ -1,50 +1,62 @@
-let currentProjects = [];
-let currentPage = 0;
-const projectsPerPage = 5;
-
 document.addEventListener('DOMContentLoaded', function() {
-    fetchProjects();
-});
+    const username = 'RichardTelecomTech';  // Your GitHub username
+    const apiUrl = `https://api.github.com/users/${username}/repos?sort=created`;
+    const hideRepos = ['techflowcx.com'];  // List of repositories to hide
+    let currentPage = 0;
+    const reposPerPage = 5;
+    let filteredRepos = [];
 
-function fetchProjects() {
-    // Simulated fetch request (replace this with actual API call or data fetch method)
-    const projects = [
-        { title: "Genesys Cloud Solutions", description: "Detailed implementations of Genesys Cloud setups for various clients, focusing on integration and customization.", link: "https://github.com/TelcoVantage/GenesysProject" },
-        // Add more project entries similar to the above
-    ];
-    currentProjects = projects;
-    displayProjects();
-}
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            // Filter out hidden repos and prepare for pagination
+            filteredRepos = data.filter(repo => !hideRepos.includes(repo.name.toLowerCase()));
+            displayRepos();
+        })
+        .catch(error => {
+            console.error('Error fetching repositories:', error);
+            document.getElementById('repo-list').innerHTML = 'Failed to load repositories.';
+        });
 
-function displayProjects() {
-    const start = currentPage * projectsPerPage;
-    const end = start + projectsPerPage;
-    const projectsToShow = currentProjects.slice(start, end);
+    function displayRepos() {
+        const repoContainer = document.getElementById('repo-list');
+        repoContainer.innerHTML = ''; // Clear previous content
+        const start = currentPage * reposPerPage;
+        const end = start + reposPerPage;
+        const reposToShow = filteredRepos.slice(start, end);
 
-    const projectsContainer = document.getElementById('projects-container');
-    projectsContainer.innerHTML = ''; // Clear previous entries
+        reposToShow.forEach(repo => {
+            const repoElement = document.createElement('div');
+            repoElement.innerHTML = `
+                <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+                <p>${repo.description || 'No description provided.'}</p>
+            `;
+            repoContainer.appendChild(repoElement);
+        });
 
-    projectsToShow.forEach(project => {
-        const projectElement = document.createElement('div');
-        projectElement.innerHTML = `
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            <a href="${project.link}" target="_blank">View on GitHub</a>
+        // Update pagination controls
+        updatePaginationControls();
+    }
+
+    function updatePaginationControls() {
+        const paginationContainer = document.getElementById('pagination');
+        paginationContainer.innerHTML = `
+            <button onclick="previousPage()" ${currentPage === 0 ? 'disabled' : ''}>&#9664;</button>
+            <button onclick="nextPage()" ${currentPage * reposPerPage + reposPerPage >= filteredRepos.length ? 'disabled' : ''}>&#9654;</button>
         `;
-        projectsContainer.appendChild(projectElement);
-    });
-}
-
-function nextPage() {
-    if ((currentPage + 1) * projectsPerPage < currentProjects.length) {
-        currentPage++;
-        displayProjects();
     }
-}
 
-function previousPage() {
-    if (currentPage > 0) {
-        currentPage--;
-        displayProjects();
-    }
-}
+    window.previousPage = function() {
+        if (currentPage > 0) {
+            currentPage--;
+            displayRepos();
+        }
+    };
+
+    window.nextPage = function() {
+        if ((currentPage + 1) * reposPerPage < filteredRepos.length) {
+            currentPage++;
+            displayRepos();
+        }
+    };
+});
