@@ -1,35 +1,40 @@
+/* Basic Reset */
 body, h1, h2, h3, p, ul, li, a {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sleek, modern font */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
 }
 
+/* Color Palette and Typography */
 body {
     color: #333;
-    background-color: #f4f4f4; /* Soft grey background */
+    background-color: #f4f4f4; /* Soft grey background for less strain */
     line-height: 1.6;
-    font-size: 16px; /* Ensures readability */
+    font-size: 16px; /* Standard readable font size */
 }
 
+/* Main Container for Consistent Layout */
 .container {
     max-width: 960px;
     margin: auto;
     padding: 20px;
-    background: #fff; /* White background for content areas */
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-    border-radius: 8px; /* Rounded corners for modern feel */
+    background: #fff; /* Bright white for content areas */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1); /* Subtle shadows for depth */
+    border-radius: 8px; /* Rounded corners for modern look */
 }
 
+/* Header with navigation */
 header {
-    background: #0077cc; /* Bright blue for vibrant header */
+    background: #0077cc; /* Bright blue for a vibrant header */
     color: white;
     padding: 20px 0;
     text-align: center;
     border-radius: 8px 8px 0 0; /* Rounded top corners */
 }
 
+/* Navigation settings */
 nav ul {
     display: flex;
     justify-content: center;
@@ -41,30 +46,33 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
-    font-size: 18px;
+    color: white; /* Ensures the text is white against the blue background */
+    font-size: 18px; /* Larger font for better readability */
+    transition: color 0.3s ease; /* Smooth transition for hover effects */
 }
 
 nav ul li a:hover {
-    color: #ffdd57; /* Bright yellow for hover */
+    color: #ffdd57; /* Bright yellow on hover for interactivity */
 }
 
+/* Styling for main content area */
 main {
     padding: 20px;
-    background: transparent; /* Remove background for main to blend with container */
+    background: transparent; /* Removes any background set in container */
 }
 
+/* Individual section styling */
 section {
     margin-bottom: 20px;
 }
 
 h1, h2, h3 {
-    color: #005fa3; /* Darker blue for headings */
+    color: #005fa3; /* Consistent blue theme for headings */
 }
 
 p {
-    color: #666;
-    padding: 0 0 10px; /* Space below paragraphs */
+    color: #666; /* Darker grey for paragraphs to reduce harshness */
+    padding: 0 0 10px; /* Padding below paragraphs */
 }
 
 /* Pagination button styles */
@@ -80,8 +88,8 @@ p {
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
-    font-size: 18px; /* Larger font for buttons */
-    border-radius: 50%; /* Circular buttons */
+    font-size: 18px; /* Slightly larger for easier interaction */
+    border-radius: 50%; /* Circular buttons for a modern touch */
     width: 45px; /* Fixed width */
     height: 45px; /* Fixed height */
     display: inline-block;
@@ -96,4 +104,18 @@ p {
 .pagination button:disabled {
     opacity: 0.5;
     cursor: not-allowed; /* Clear indication that button is disabled */
+}
+
+/* Footer styling for consistency */
+footer {
+    background: #0077cc;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px; /* Slightly smaller font size for footer content */
 }
