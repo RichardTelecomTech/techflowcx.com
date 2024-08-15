@@ -7,10 +7,9 @@ body, h1, h2, h3, p, ul, li, a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
 }
 
-/* Color Palette and Typography */
 body {
     color: #333;
-    background-color: #f4f4f4; /* Soft grey background for less strain */
+    background-color: #f4f4f4; /* Soft grey background for less visual strain */
     line-height: 1.6;
     font-size: 16px; /* Standard readable font size */
 }
@@ -22,7 +21,7 @@ body {
     padding: 20px;
     background: #fff; /* Bright white for content areas */
     box-shadow: 0 2px 15px rgba(0,0,0,0.1); /* Subtle shadows for depth */
-    border-radius: 8px; /* Rounded corners for modern look */
+    border-radius: 8px; /* Rounded corners for a modern look */
 }
 
 /* Header with navigation */
@@ -51,8 +50,13 @@ nav ul li a {
     transition: color 0.3s ease; /* Smooth transition for hover effects */
 }
 
+.nav-about, .nav-projects, .nav-contact {
+    color: #0077cc; /* Specific blue color for each navigation link */
+}
+
 nav ul li a:hover {
     color: #ffdd57; /* Bright yellow on hover for interactivity */
+    text-decoration: none; /* Removes underline on hover */
 }
 
 /* Styling for main content area */
